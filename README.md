@@ -22,8 +22,8 @@ Now you have **2 options** to build and run the application
 Go to http://localhost:8081/ to see the application
 
 ### Login
-Username: admin
-Password: foobar
+- Username: `admin`
+- Password: `foobar`
 
 ## Assignment 1
 ### Cross-site scripting
