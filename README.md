@@ -34,19 +34,19 @@ This page is vulnerable to a cross-site scripting attack.
 ![DirectLink2](image/directlink2.png)
 
 ### 1a Try to create an alert loading the page
-- [Hint 1](hints/sqli/hint1.md)
-- [Hint 2](hints/sqli/hint2.md)
+- [Hint 1](hints/xss/hint1.md)
+- [Hint 2](hints/xss/hint2.md)
 
 ### 1b Try to display the token of a user that is on the page
 
-- [Hint 3](hints/adduser/hint3.md)
-- [Hint 4](hints/adduser/hint4.md)
+- [Hint 3](hints/xss/hint3.md)
+- [Hint 4](hints/xss/hint4.md)
 
 ### 1c Fix by sanitizing the input
 
-- [Hint 5](hints/adduser/hint5.md)
-- [Hint 6](hints/adduser/hint6.md)
-- [Hint 7](hints/adduser/hint7.md)
+- [Hint 5](hints/xss/hint5.md)
+- [Hint 6](hints/xss/hint6.md)
+- [Hint 7](hints/xss/hint7.md)
 
 
 
