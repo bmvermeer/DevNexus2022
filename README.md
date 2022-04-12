@@ -21,7 +21,7 @@ Now you have **2 options** to build and run the application
     ```
 Go to http://localhost:8081/ to see the application
 
-###Login
+### Login
 Username: admin
 Password: foobar
 
